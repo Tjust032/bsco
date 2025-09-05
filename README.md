@@ -1,4 +1,84 @@
-# Welcome to React Router!
+# BSCO Monorepo
+
+This is a Turborepo monorepo containing both frontend and backend applications.
+
+## Project Structure
+
+```
+bsco/
+├── apps/
+│   ├── frontend/    # React Router v7 + Tailwind CSS
+│   └── backend/     # Node.js + Express.js + TypeScript
+├── packages/        # Shared packages (future use)
+├── turbo.json      # Turborepo configuration
+└── package.json    # Root workspace configuration
+```
+
+## Getting Started
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+# Run both frontend and backend in development mode
+npm run dev
+
+# Or run individually:
+npm run dev --filter=frontend
+npm run dev --filter=backend
+```
+
+### Build
+
+```bash
+# Build all apps
+npm run build
+
+# Or build individually:
+npm run build --filter=frontend
+npm run build --filter=backend
+```
+
+### Start Production
+
+```bash
+# Start all apps in production mode
+npm run start
+```
+
+## Apps
+
+### Frontend (React Router v7)
+
+- **Port:** 5173 (development)
+- **Location:** `apps/frontend/`
+- **Tech Stack:** React Router v7, TypeScript, Tailwind CSS, Vite
+
+### Backend (Express.js)
+
+- **Port:** 3001
+- **Location:** `apps/backend/`
+- **Tech Stack:** Node.js, Express.js, TypeScript, CORS, Helmet
+
+## Available Scripts
+
+- `npm run dev` - Start all apps in development mode
+- `npm run build` - Build all apps for production
+- `npm run start` - Start all apps in production mode
+- `npm run typecheck` - Run TypeScript type checking for all apps
+
+## Environment Variables
+
+Backend environment variables (copy `apps/backend/env.example` to `apps/backend/.env`):
+
+- `PORT` - Backend server port (default: 3001)
+- `FRONTEND_URL` - Frontend URL for CORS (default: http://localhost:5173)
+- `NODE_ENV` - Environment (development/production)
 
 A modern, production-ready template for building full-stack React applications using React Router.
 
